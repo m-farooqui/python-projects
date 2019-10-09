@@ -1,0 +1,29 @@
+#The function takes in text from a article or book. Declare all the local variables also create a varible score to hold the final score
+Define a function compute_readability(text):
+     Declare a variable total words and set to 0.
+     Declare a variable total sentences and set to 0
+     Declare a variable total syllables and set to 0
+     Declare a varaible score and set to 0.
+ 
+     Assign variable total words to results of calling the function count words(text)
+     Assign variable total sentences to results calling the function count_sentences(text)
+     Assign variable total syllables to results of calling the function count_syllables(text)
+ #Use the formula to compute the score    
+     Assign variable score to 
+              206.835 - 1.015 * (total_words/total_sentences) - 84.6 * (total_syllables/total_words)
+ #After getting the score map that to a reading level            
+     if score >= 90:
+            Print 'Reading level of 5th grade'
+     elif scores >= 80:
+            Print 'Reading level of 6th grade'
+     elif scores >= 70:
+          Print'Reading level of 7th grade'
+     elif scores >= 60:
+          Print'Reading level of 8-9th grade'
+     elif scores >= 50:
+          Print'Reading level of 10-12th grade'
+     elif scores >= 30:
+          Print'Reading level of college student'
+     else:
+          Print'Reading level of college graduate'
+       
