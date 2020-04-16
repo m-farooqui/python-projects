@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Apr  3 21:33:34 2020
+
+@author: mawais
+"""
+#import the modules
+import sys
+import random
+#answer = True
+#using the while condition with the input command to ask for a number if the number stays between 1 thru 8 printout a statemnt regarding that number else clear the screen 
+while answer:
+    question = input("Ask the magic 8 ball a question: (press enter to quit)")
+    
+    answers = random.randint(1,8)
+    
+    if question == "" :
+        sys.exit()
+    
+    elif answers == 1  :
+        print ("It is certain")
+        
+    elif answers == 2  :
+        print("Outlook good")
+        
+    elif answers == 3 :
+        print("You may rely on it")
+        
+    elif answers == 4 :
+        print("Ask again later")
+        
+    elif answers == 5 :
+        print("Concentrate and ask again")
+        
+    elif answers == 6 :
+        print("Reply hazy, try again")
+        
+    elif answers == 7 :
+        print("My reply is no")
+        
+    elif answers == 8 :
+        print("My sources say no")
+    
+          
