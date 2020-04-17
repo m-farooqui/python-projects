@@ -20,10 +20,10 @@ class TwitterClient(object):
         Class constructor or initialization method. 
         '''
         # keys and tokens from the Twitter Dev Console 
-        consumer_key = '4VIlHMgxbVhtT7SOjk8KgHlNc'
-        consumer_secret = 'l5qiAdSkBCeJcNygl3qnyOFhh4Lh2m8dOH3cZ8Fbo5ByfdDamh'
-        access_token = '633367571-gFMo23LAczvABFO8urQUjK3sScBHmtcEnbP83FS8'
-        access_token_secret = 'PzfS4AROnIaYiLBNIJ609So9fmnq2eNJGgyneD7iPAXTD'
+        consumer_key = ''
+        consumer_secret = ''
+        access_token = ''
+        access_token_secret = ''
   
         # attempt authentication 
         try: 
