@@ -1,0 +1,76 @@
+#import all necessary Libray
+from tkinter import *
+from tkinter import filedialog
+from pygame import mixer
+from pygame import image
+
+get_volume = .6
+#implement our class & Buttons for our application
+class MusicPlayer:
+    def __init__(self, window ):
+        window.geometry('1000x800'); window.title('My Music Player'); window.resizable(400,500)
+        Load = Button(window, text = 'Load',  width = 20, font = ('Times', 10), command = self.load)
+        Play = Button(window, text = 'Play',  width = 20,font = ('Times', 10), command = self.play)
+        Pause = Button(window,text = 'Pause', width = 20, font = ('Times', 10), command = self.pause)
+        Stop = Button(window, text = 'Stop',  width = 20, font = ('Times', 10), command = self.stop)
+        prevSong = Button(window, text = 'Rewind', width = 20, font = ('Times', 10), command = self.prevSong)
+        Unpause = Button(window, text = 'Unpause', width = 20, font = ('Times', 10), command = self.Unpause)
+        increase_volume = Button(window, text = 'Volume', width = 20, font = ('Times', 10), command = self.increase_volume)
+        volume_level = Button(window, text = 'Change Volume', width = 20, font = ('Times', 10), command = self.volume_level)
+        Image = Button(window, text = 'Load Image', width = 20, font = ('Times', 10), command = self.Image)
+        Fade = Button(window, text = 'Fadeout', width = 20, font = ('Times', 10), command = self.Fade)
+        Load.pack(side = TOP, fill=BOTH, padx=1, pady=1)
+        Play.pack(side = TOP,fill=BOTH, padx=1, pady=1)
+        Pause.pack(side = TOP,fill=BOTH, padx=1, pady=1)
+        Stop.pack(side = TOP,fill=BOTH, padx=1, pady=1)
+        prevSong.pack(side = TOP,fill=BOTH, padx=1, pady=1)
+        Unpause.pack(side = TOP, fill = BOTH, padx = 1, pady = 1)
+        increase_volume.pack(side = TOP, fill = BOTH, padx = 1, pady = 1)
+        volume_level.pack(side = TOP, fill = BOTH, padx = 1, pady = 1)
+        Image.pack(side = TOP, fill = BOTH, padx = 1, pady = 1)
+        Fade.pack(side = TOP, fill = BOTH, padx = 1, pady = 1)
+        self.music_file = False
+        self.playing_state = False
+#implement our class & Buttons for our application,Add load,play,pause and stop method to our class
+    def load(self):
+        self.music_file = filedialog.askopenfilename()
+    def play(self):
+        if self.music_file:
+            mixer.init()
+            mixer.music.load(self.music_file)
+            mixer.music.play()
+    def pause(self):
+        if not self.playing_state:
+            mixer.music.pause()
+            self.playing_state=True
+        else:
+            mixer.music.unpause()
+            self.playing_state = False
+    def stop(self):
+        mixer.music.stop()
+    def prevSong():
+        print("musiclist is ",musiclist)
+        print('Playing previous song')
+        mixer.music.rewind()
+    def Unpause(self):
+        if not self.playing_state:
+            mixer.music.pause()
+            self.playing_state=False
+        else:
+            mixer.music.unpause()
+            self.playing_state = True
+    def increase_volume(self):
+      mixer.music.set_volume(1)
+
+    def volume_level(self):
+        mixer.music.get_volume()
+    def Image(self):
+        self.loadimage = filedialog.askopenfilename()
+        image.load(self.loadimage)
+    def Fade(self):
+        mixer.music.fadeout()
+
+root = Tk()
+app= MusicPlayer(root)
+root.configure(bg = 'salmon1')
+root.mainloop()
